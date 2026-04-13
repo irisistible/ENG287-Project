@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cspd5r0e6my3i" path="res://Scripts/Child.gd" id="1_m0xj1"]
 [ext_resource type="Script" uid="uid://cc7mug34k4mtt" path="res://Scripts/Present.gd" id="2_we72x"]
-[ext_resource type="Texture2D" uid="uid://ct08gkkypcyjg" path="res://Assets/Presents/icon.svg" id="3_we72x"]
 [ext_resource type="Script" uid="uid://bsul2uc068mgc" path="res://Scripts/PuzzleData.gd" id="3_yssrq"]
 [ext_resource type="Script" uid="uid://8m55mkd317ka" path="res://Scripts/Wrapping.gd" id="4_6ycta"]
+[ext_resource type="Texture2D" uid="uid://8er64kkkiy8g" path="res://Assets/Presents/ball icon.svg" id="4_li17d"]
+[ext_resource type="Texture2D" uid="uid://d36eublxm5eu6" path="res://Assets/Presents/teddy bear icon.svg" id="4_yssrq"]
+[ext_resource type="Texture2D" uid="uid://hrku3ni40ogo" path="res://Assets/Presents/toy car icon.svg" id="5_6ycta"]
+[ext_resource type="Texture2D" uid="uid://ceui40mn6cjsw" path="res://Assets/Wrappings/blue wrapping icon.svg" id="8_cjjcu"]
+[ext_resource type="Texture2D" uid="uid://kj6qjphhl5s0" path="res://Assets/Wrappings/red wrapping icon.svg" id="9_l1mdf"]
+[ext_resource type="Texture2D" uid="uid://dqrewrgnw7ns3" path="res://Assets/Wrappings/gold wrapping icon.svg" id="10_2jv1s"]
 
 [sub_resource type="Resource" id="Resource_yssrq"]
 script = ExtResource("1_m0xj1")
@@ -16,32 +21,45 @@ script = ExtResource("1_m0xj1")
 metadata/_custom_type_script = "uid://cspd5r0e6my3i"
 
 [sub_resource type="Resource" id="Resource_6ycta"]
+script = ExtResource("1_m0xj1")
+metadata/_custom_type_script = "uid://cspd5r0e6my3i"
+
+[sub_resource type="Resource" id="Resource_2jv1s"]
 script = ExtResource("2_we72x")
-display_name = "Present1"
-icon = ExtResource("3_we72x")
+icon = ExtResource("4_yssrq")
 metadata/_custom_type_script = "uid://cc7mug34k4mtt"
 
 [sub_resource type="Resource" id="Resource_c6o8p"]
 script = ExtResource("2_we72x")
-icon = ExtResource("3_we72x")
+icon = ExtResource("4_li17d")
+metadata/_custom_type_script = "uid://cc7mug34k4mtt"
+
+[sub_resource type="Resource" id="Resource_l1mdf"]
+script = ExtResource("2_we72x")
+icon = ExtResource("5_6ycta")
 metadata/_custom_type_script = "uid://cc7mug34k4mtt"
 
 [sub_resource type="Resource" id="Resource_li17d"]
 script = ExtResource("4_6ycta")
 display_name = "Wrapping1"
-icon = ExtResource("3_we72x")
+icon = ExtResource("8_cjjcu")
+metadata/_custom_type_script = "uid://8m55mkd317ka"
+
+[sub_resource type="Resource" id="Resource_6cfbk"]
+script = ExtResource("4_6ycta")
+icon = ExtResource("10_2jv1s")
 metadata/_custom_type_script = "uid://8m55mkd317ka"
 
 [sub_resource type="Resource" id="Resource_cjjcu"]
 script = ExtResource("4_6ycta")
-icon = ExtResource("3_we72x")
+icon = ExtResource("9_l1mdf")
 metadata/_custom_type_script = "uid://8m55mkd317ka"
 
 [resource]
 script = ExtResource("3_yssrq")
-presents = Array[ExtResource("2_we72x")]([SubResource("Resource_6ycta"), SubResource("Resource_c6o8p")])
-wrappings = Array[ExtResource("4_6ycta")]([SubResource("Resource_li17d"), SubResource("Resource_cjjcu")])
-children = Array[ExtResource("1_m0xj1")]([SubResource("Resource_yssrq"), SubResource("Resource_we72x")])
-hints = Array[String](["Presetn goes there"])
-num_children = 2
+presents = Array[ExtResource("2_we72x")]([SubResource("Resource_2jv1s"), SubResource("Resource_c6o8p"), SubResource("Resource_l1mdf")])
+wrappings = Array[ExtResource("4_6ycta")]([SubResource("Resource_li17d"), SubResource("Resource_6cfbk"), SubResource("Resource_cjjcu")])
+children = Array[ExtResource("1_m0xj1")]([SubResource("Resource_yssrq"), SubResource("Resource_we72x"), SubResource("Resource_6ycta")])
+hints = Array[String](["Child 1's favourite colour is blue", "Child 2 is scared of bears", "Child 3 likes to play with toy cars", "Child 3 wants the box to match the present"])
+num_children = 3
 metadata/_custom_type_script = "uid://bsul2uc068mgc"

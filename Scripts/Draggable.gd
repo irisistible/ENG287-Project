@@ -5,6 +5,9 @@ var is_inside_slot = false
 var body_ref
 var offset: Vector2
 var initialPos: Vector2
+var index: int
+var category: int
+var puzzle_scene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -38,13 +41,17 @@ func _on_area_2d_mouse_exited():
 		scale = Vector2(1, 1)
 		
 func _on_area_2d_body_entered(body:StaticBody2D):
-	if body.is_in_group('slot'):
+	if body.is_in_group("child_slot"):
 		is_inside_slot = true
 		body.modulate = Color(Color.REBECCA_PURPLE, 1)
 		body_ref = body
+		# TODO: move this to mouse release function
+		puzzle_scene.on_dropped(category, index, body.index)
 		
 func _on_area_2d_body_exited(body):
-	if body.is_in_group('slot'):
+	if body.is_in_group("child_slot"):
 		is_inside_slot = false
 		body.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
+		# TODO: move this to mouse up or when we pick up
+		puzzle_scene.on_removed(category, index, body.index)
 		

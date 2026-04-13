@@ -18,7 +18,13 @@ func _reset_state() -> void:
 	for i in n:
 		current_state[0].append(-1)
 		current_state[1].append(-1)
-		
+
+func assign(category: int, child: int, index: int):
+	if category == 0:
+		assign_present(child, index)
+	else:
+		assign_wrapping(child, index)
+
 # Assign a present to a child
 func assign_present(child: int, present_index: int) -> void:
 	current_state[0][child] = present_index

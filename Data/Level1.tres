@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cspd5r0e6my3i" path="res://Scripts/Child.gd" id="1_m0xj1"]
 [ext_resource type="Script" uid="uid://cc7mug34k4mtt" path="res://Scripts/Present.gd" id="2_we72x"]
-[ext_resource type="Texture2D" uid="uid://ct08gkkypcyjg" path="res://icon.svg" id="3_we72x"]
+[ext_resource type="Texture2D" uid="uid://ct08gkkypcyjg" path="res://Assets/Presents/icon.svg" id="3_we72x"]
 [ext_resource type="Script" uid="uid://bsul2uc068mgc" path="res://Scripts/PuzzleData.gd" id="3_yssrq"]
 [ext_resource type="Script" uid="uid://8m55mkd317ka" path="res://Scripts/Wrapping.gd" id="4_6ycta"]
 
@@ -19,7 +19,6 @@ metadata/_custom_type_script = "uid://cspd5r0e6my3i"
 script = ExtResource("2_we72x")
 display_name = "Present1"
 icon = ExtResource("3_we72x")
-color = Color(0, 0, 0.83137256, 1)
 metadata/_custom_type_script = "uid://cc7mug34k4mtt"
 
 [sub_resource type="Resource" id="Resource_c6o8p"]
@@ -30,12 +29,12 @@ metadata/_custom_type_script = "uid://cc7mug34k4mtt"
 [sub_resource type="Resource" id="Resource_li17d"]
 script = ExtResource("4_6ycta")
 display_name = "Wrapping1"
-texture = ExtResource("3_we72x")
+icon = ExtResource("3_we72x")
 metadata/_custom_type_script = "uid://8m55mkd317ka"
 
 [sub_resource type="Resource" id="Resource_cjjcu"]
 script = ExtResource("4_6ycta")
-texture = ExtResource("3_we72x")
+icon = ExtResource("3_we72x")
 metadata/_custom_type_script = "uid://8m55mkd317ka"
 
 [resource]
@@ -43,5 +42,6 @@ script = ExtResource("3_yssrq")
 presents = Array[ExtResource("2_we72x")]([SubResource("Resource_6ycta"), SubResource("Resource_c6o8p")])
 wrappings = Array[ExtResource("4_6ycta")]([SubResource("Resource_li17d"), SubResource("Resource_cjjcu")])
 children = Array[ExtResource("1_m0xj1")]([SubResource("Resource_yssrq"), SubResource("Resource_we72x")])
+hints = Array[String](["Presetn goes there"])
 num_children = 2
 metadata/_custom_type_script = "uid://bsul2uc068mgc"

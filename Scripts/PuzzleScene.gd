@@ -1,9 +1,10 @@
+# PuzzleScene.gd
 class_name PuzzleScene
 extends Node2D
 
 @export var puzzle_data: PuzzleData
-@export var draggable_scene: PackedScene  # your draggable Node2D scene
-@export var slot_scene: PackedScene       # your StaticBody2D slot scene
+@export var draggable_scene: PackedScene
+@export var slot_scene: PackedScene
 
 var puzzle: Puzzle
 
@@ -12,51 +13,60 @@ func _ready() -> void:
 	_spawn_children()
 	_spawn_presents()
 	_spawn_wrappings()
+	_spawn_hints()
 
 func _spawn_children() -> void:
 	for i in puzzle.n:
-		var slot = slot_scene.instantiate()
-		slot.position = Vector2(i * 150 + 100, 100)  # lay them out however fits your game
-		slot.add_to_group("child_slot")
-		slot.index = i
-		add_child(slot)
-	for i in puzzle.n:
-		var slot = slot_scene.instantiate()
-		slot.position = Vector2(i * 150 + 100, 250)  # lay them out however fits your game
-		slot.add_to_group("child_slot")
-		slot.index = i
-		add_child(slot)
+		var slot_p = slot_scene.instantiate()
+		slot_p.init(i, 0, true, Vector2(i * 150 + 100, 100))
+		slot_p.occupant_changed.connect(_on_slot_changed)
+		add_child(slot_p)
+
+		var slot_w = slot_scene.instantiate()
+		slot_w.init(i, 1, true, Vector2(i * 150 + 100, 250))
+		slot_w.occupant_changed.connect(_on_slot_changed)
+		add_child(slot_w)
 
 func _spawn_presents() -> void:
 	for i in puzzle.n:
+		var slot = slot_scene.instantiate()
+		slot.init(i, 0, false, Vector2(i * 150 + 100, 400))
+		add_child(slot)
+
 		var draggable = draggable_scene.instantiate()
-		draggable.position = Vector2(i * 150 + 100, 400)
 		draggable.index = i
-		draggable.category = 0  # 0 = present
-		draggable.puzzle_scene = self
+		draggable.category = 0
+		draggable.get_node("Sprite2D").texture = puzzle_data.presents[i].icon
 		add_child(draggable)
+		draggable.global_position = slot.global_position
+		draggable.place_in_slot(slot)
 
 func _spawn_wrappings() -> void:
 	for i in puzzle.n:
-		var draggable = draggable_scene.instantiate()
-		draggable.position = Vector2(i * 150 + 100, 550)
-		draggable.index = i
-		draggable.category = 1  # 1 = wrapping
-		draggable.puzzle_scene = self
-		add_child(draggable)
+		var slot = slot_scene.instantiate()
+		slot.init(i, 1, false, Vector2(i * 150 + 100, 550))
+		add_child(slot)
 
-# Called by a draggable when it lands in a slot
-func on_dropped(category: int, item_index: int, child_index: int) -> void:
-	if category == 0:
-		puzzle.assign_present(child_index, item_index)
+		var draggable = draggable_scene.instantiate()
+		draggable.index = i
+		draggable.category = 1
+		draggable.get_node("Sprite2D").texture = puzzle_data.wrappings[i].icon
+		add_child(draggable)
+		draggable.global_position = slot.global_position
+		draggable.place_in_slot(slot)
+
+func _spawn_hints() -> void:
+	for i in puzzle_data.hints.size():
+		var label = Label.new()
+		label.text = "• " + puzzle_data.hints[i]
+		label.position = Vector2(550, i * 40 + 50)
+		add_child(label)
+
+func _on_slot_changed(slot) -> void:
+	if slot.occupant == null:
+		puzzle.assign(slot.category, slot.index, -1)
 	else:
-		puzzle.assign_wrapping(child_index, item_index)
-	
+		puzzle.assign(slot.category, slot.index, slot.occupant.index)
+
 	if puzzle.is_solved():
 		print("Puzzle solved!")
-		
-func on_removed(category: int, item_index: int, child_index: int) -> void:
-	if category == 0:
-		puzzle.assign_present(child_index, -1)
-	else:
-		puzzle.assign_wrapping(child_index, -1)

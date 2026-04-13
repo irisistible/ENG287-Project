@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cfxo6ia2mv0wc"]
+
+[ext_resource type="Script" uid="uid://xmh74si2m5fp" path="res://slot.gd" id="1_5grhy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pyseu"]
+
+[node name="slot1" type="StaticBody2D" unique_id=1076891376 groups=["slot"]]
+script = ExtResource("1_5grhy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2088549518]
+shape = SubResource("RectangleShape2D_pyseu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1873327136]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2

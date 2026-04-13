@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://qv8kyqu3oafp"]
+
+[ext_resource type="PackedScene" uid="uid://bvgbi4oj44v0d" path="res://gift_1.tscn" id="1_hbghi"]
+[ext_resource type="PackedScene" uid="uid://cfxo6ia2mv0wc" path="res://slot_1.tscn" id="2_hn12h"]
+
+[node name="level1" type="Node2D" unique_id=1246113248]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1804764688]
+offset_left = 87.0
+offset_top = 53.0
+offset_right = 1087.0
+offset_bottom = 553.0
+mouse_filter = 2
+color = Color(0.36884677, 0.15720117, 0.263256, 1)
+
+[node name="slot1" parent="." unique_id=1076891376 instance=ExtResource("2_hn12h")]
+position = Vector2(591, 278)
+
+[node name="gift1" parent="." unique_id=256390079 instance=ExtResource("1_hbghi")]
+position = Vector2(243, 184)

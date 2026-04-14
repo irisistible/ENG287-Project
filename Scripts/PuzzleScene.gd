@@ -17,6 +17,11 @@ func _ready() -> void:
 
 func _spawn_children() -> void:
 	for i in puzzle.n:
+		var label = Label.new()
+		label.text = "Child " + str(i)
+		label.position = Vector2(i * 150 + 100, 10)
+		add_child(label)
+		
 		var slot_p = slot_scene.instantiate()
 		slot_p.init(i, 0, true, Vector2(i * 150 + 100, 100))
 		slot_p.occupant_changed.connect(_on_slot_changed)
@@ -28,9 +33,10 @@ func _spawn_children() -> void:
 		add_child(slot_w)
 
 func _spawn_presents() -> void:
+	var permutation = _generate_permutation(puzzle.n)
 	for i in puzzle.n:
 		var slot = slot_scene.instantiate()
-		slot.init(i, 0, false, Vector2(i * 150 + 100, 400))
+		slot.init(i, 0, false, Vector2(permutation[i] * 150 + 100, 400))
 		add_child(slot)
 
 		var draggable = draggable_scene.instantiate()
@@ -42,9 +48,10 @@ func _spawn_presents() -> void:
 		draggable.place_in_slot(slot)
 
 func _spawn_wrappings() -> void:
+	var permutation = _generate_permutation(puzzle.n)
 	for i in puzzle.n:
 		var slot = slot_scene.instantiate()
-		slot.init(i, 1, false, Vector2(i * 150 + 100, 550))
+		slot.init(i, 1, false, Vector2(permutation[i] * 150 + 100, 550))
 		add_child(slot)
 
 		var draggable = draggable_scene.instantiate()
@@ -70,3 +77,13 @@ func _on_slot_changed(slot) -> void:
 
 	if puzzle.is_solved():
 		print("Puzzle solved!")
+
+func _generate_permutation(n: int) -> Array[int]:
+	# 1. Create an array from 0 to n - 1
+	var permutation: Array[int] = []
+	permutation.assign(range(0, n)) 
+
+	# 2. Randomly shuffle the elements
+	permutation.shuffle()
+
+	return permutation

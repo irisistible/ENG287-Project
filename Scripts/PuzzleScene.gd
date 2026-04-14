@@ -2,6 +2,8 @@
 class_name PuzzleScene
 extends Node2D
 
+const PUZZLE_SOLVED_SCENE = preload("res://Scenes/PuzzleSolvedScene.tscn")
+
 @export var draggable_scene: PackedScene
 @export var slot_scene: PackedScene
 
@@ -67,17 +69,15 @@ func _spawn_hints() -> void:
 	for i in puzzle_data.hints.size():
 		var label = Label.new()
 		label.text = "• " + puzzle_data.hints[i]
-		label.position = Vector2(550, i * 40 + 50)
-		add_child(label)
+		label.autowrap_mode = TextServer.AUTOWRAP_WORD
+		$CanvasLayer/Control/MarginContainer/VBoxContainer/HintsContainer.add_child(label)
+		
 
 func _on_slot_changed(slot) -> void:
 	if slot.occupant == null:
 		puzzle.assign(slot.category, slot.index, -1)
 	else:
 		puzzle.assign(slot.category, slot.index, slot.occupant.index)
-
-	if puzzle.is_solved():
-		print("Puzzle solved!")
 
 func _generate_permutation(n: int) -> Array[int]:
 	# 1. Create an array from 0 to n - 1
@@ -88,3 +88,33 @@ func _generate_permutation(n: int) -> Array[int]:
 	permutation.shuffle()
 
 	return permutation
+
+
+func _on_check_solution_button_pressed() -> void:
+	if puzzle.is_solved():
+		_on_puzzle_solved()
+	else:
+		_on_puzzle_not_solved()
+		
+func _on_puzzle_solved() -> void:
+	get_tree().change_scene_to_packed(PUZZLE_SOLVED_SCENE)
+	
+func _on_puzzle_not_solved() -> void:
+	_shake_button()
+	_show_incorrect()
+	
+func _shake_button() -> void:
+	var button = $CanvasLayer/Control/MarginContainer/VBoxContainer/CheckSolutionButton
+	var original_pos = button.position
+	var tween = get_tree().create_tween()
+	tween.tween_property(button, "position", original_pos + Vector2(10, 0), 0.05)
+	tween.tween_property(button, "position", original_pos - Vector2(10, 0), 0.05)
+	tween.tween_property(button, "position", original_pos + Vector2(8, 0), 0.05)
+	tween.tween_property(button, "position", original_pos - Vector2(8, 0), 0.05)
+	tween.tween_property(button, "position", original_pos, 0.05)
+
+func _show_incorrect() -> void:
+	var label = $CanvasLayer/Control/MarginContainer/VBoxContainer/IncorrectLabel
+	label.visible = true
+	await get_tree().create_timer(2.0).timeout
+	label.visible = false

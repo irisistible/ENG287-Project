@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bvxysut2tkmyl"]
+
+[ext_resource type="Script" uid="uid://dgrvchtcgl21t" path="res://Scripts/PuzzleSolvedScene.gd" id="1_ealjm"]
+
+[node name="PuzzleSolvedScene" type="Control" unique_id=1892124183]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ealjm")

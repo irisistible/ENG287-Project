@@ -43,5 +43,6 @@ presents = Array[ExtResource("2_we72x")]([SubResource("Resource_6ycta"), SubReso
 wrappings = Array[ExtResource("4_6ycta")]([SubResource("Resource_li17d"), SubResource("Resource_cjjcu")])
 children = Array[ExtResource("1_m0xj1")]([SubResource("Resource_yssrq"), SubResource("Resource_we72x")])
 hints = Array[String](["Presetn goes there"])
+dialog = Array[String](["Hello", "fheruihfgtubgtg"])
 num_children = 2
 metadata/_custom_type_script = "uid://bsul2uc068mgc"

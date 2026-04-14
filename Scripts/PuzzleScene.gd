@@ -2,13 +2,14 @@
 class_name PuzzleScene
 extends Node2D
 
-@export var puzzle_data: PuzzleData
 @export var draggable_scene: PackedScene
 @export var slot_scene: PackedScene
 
 var puzzle: Puzzle
+var puzzle_data: PuzzleData
 
 func _ready() -> void:
+	puzzle_data = GameManager.current_level()  # gets the right level's data
 	puzzle = Puzzle.new(puzzle_data)
 	_spawn_children()
 	_spawn_presents()

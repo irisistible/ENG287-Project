@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="ENG287 Project"
-run/main_scene="uid://fo68b8oqx5v4"
+run/main_scene="uid://duwkrgpfvg65s"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://Assets/Presents/icon.svg"
 
 [autoload]
 
 global="*uid://dpxv7nfpjkpbb"
+GameManager="*uid://bfkc5vtsjx8ux"
 
 [input]
 

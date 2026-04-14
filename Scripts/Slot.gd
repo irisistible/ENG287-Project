@@ -22,7 +22,7 @@ func set_occupant(new_occupant) -> void:
 	occupant = new_occupant
 	emit_signal("occupant_changed", self)
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if global.is_dragging:
 		visible = true
 	else:

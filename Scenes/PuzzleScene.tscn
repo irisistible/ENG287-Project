@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://fo68b8oqx5v4"]
 
 [ext_resource type="Script" uid="uid://db0t7m1k3cdje" path="res://Scripts/PuzzleScene.gd" id="1_mbnby"]
-[ext_resource type="Resource" uid="uid://buaa0atpxbi1u" path="res://Data/Level1.tres" id="2_7hccu"]
+[ext_resource type="Resource" uid="uid://buaa0atpxbi1u" path="res://Data/Levels/Level1.tres" id="2_7hccu"]
 [ext_resource type="PackedScene" uid="uid://bvgbi4oj44v0d" path="res://Draggable.tscn" id="3_i3onv"]
 [ext_resource type="PackedScene" uid="uid://cfxo6ia2mv0wc" path="res://Slot.tscn" id="4_kyclr"]
 

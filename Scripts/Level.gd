@@ -11,7 +11,6 @@ func _play_dialogue() -> void:
 	add_child(dialogue)
 	dialogue.init(GameManager.current_level().dialog)
 	dialogue.finished.connect(_on_dialogue_finished)
-	print("dialogue loaded, hints: ", GameManager.current_level().dialog)
 
 func _on_dialogue_finished() -> void:
 	get_tree().change_scene_to_packed(PUZZLE_SCENE)

@@ -11,19 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://kj6qjphhl5s0" path="res://Assets/Wrappings/red wrapping icon.svg" id="9_l1mdf"]
 [ext_resource type="Texture2D" uid="uid://dqrewrgnw7ns3" path="res://Assets/Wrappings/gold wrapping icon.svg" id="10_2jv1s"]
 
-[sub_resource type="Resource" id="Resource_yssrq"]
-script = ExtResource("1_m0xj1")
-display_name = "Child1"
-metadata/_custom_type_script = "uid://cspd5r0e6my3i"
-
-[sub_resource type="Resource" id="Resource_we72x"]
-script = ExtResource("1_m0xj1")
-metadata/_custom_type_script = "uid://cspd5r0e6my3i"
-
-[sub_resource type="Resource" id="Resource_6ycta"]
-script = ExtResource("1_m0xj1")
-metadata/_custom_type_script = "uid://cspd5r0e6my3i"
-
 [sub_resource type="Resource" id="Resource_2jv1s"]
 script = ExtResource("2_we72x")
 icon = ExtResource("4_yssrq")
@@ -59,7 +46,7 @@ metadata/_custom_type_script = "uid://8m55mkd317ka"
 script = ExtResource("3_yssrq")
 presents = Array[ExtResource("2_we72x")]([SubResource("Resource_2jv1s"), SubResource("Resource_c6o8p"), SubResource("Resource_l1mdf")])
 wrappings = Array[ExtResource("4_6ycta")]([SubResource("Resource_li17d"), SubResource("Resource_6cfbk"), SubResource("Resource_cjjcu")])
-children = Array[ExtResource("1_m0xj1")]([SubResource("Resource_yssrq"), SubResource("Resource_we72x"), SubResource("Resource_6ycta")])
 hints = Array[String](["Child 1's favourite colour is blue", "Child 2 is scared of bears", "Child 3 likes to play with toy cars", "Child 3 wants the box to match the present"])
+dialog = Array[String](["Hello", "frghaotgotuihgtjfnheruif r rtg tyhguit  t gtgtgtgdrtggrt"])
 num_children = 3
 metadata/_custom_type_script = "uid://bsul2uc068mgc"

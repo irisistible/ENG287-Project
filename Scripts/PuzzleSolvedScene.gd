@@ -13,6 +13,7 @@ func _input(event: InputEvent) -> void:
 	
 	if GameManager.has_next_level():
 		GameManager.next_level()
-		get_tree().change_scene_to_packed(LEVEL_SCENE)
+		#get_tree().change_scene_to_packed(LEVEL_SCENE)
+		get_tree().change_scene_to_file("res://Scenes/Level.tscn")
 	else:
 		get_tree().change_scene_to_packed(MAIN_MENU_SCENE)

@@ -21,7 +21,7 @@ func _ready() -> void:
 func _spawn_children() -> void:
 	for i in puzzle.n:
 		var label = Label.new()
-		label.text = "Child " + str(i)
+		label.text = puzzle_data.children[i].display_name
 		label.position = Vector2(i * 150 + 100, 10)
 		add_child(label)
 		

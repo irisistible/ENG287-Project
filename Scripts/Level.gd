@@ -9,6 +9,7 @@ func _ready() -> void:
 func _play_dialogue() -> void:
 	var dialogue = DIALOGUE_SCENE.instantiate()
 	add_child(dialogue)
+	print(GameManager.current_level().dialog)
 	dialogue.init(GameManager.current_level().dialog)
 	dialogue.finished.connect(_on_dialogue_finished)
 

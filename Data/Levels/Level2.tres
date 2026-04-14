@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3 uid="uid://xv4e0k21nfit"]
+
+[ext_resource type="Script" uid="uid://cspd5r0e6my3i" path="res://Scripts/Child.gd" id="1_h2slq"]
+[ext_resource type="Script" uid="uid://cc7mug34k4mtt" path="res://Scripts/Present.gd" id="2_dcpk8"]
+[ext_resource type="Texture2D" uid="uid://ds2i5jqw63uir" path="res://Assets/Presents/book icon.svg" id="3_ejsbx"]
+[ext_resource type="Script" uid="uid://bsul2uc068mgc" path="res://Scripts/PuzzleData.gd" id="3_n8gn2"]
+[ext_resource type="Script" uid="uid://8m55mkd317ka" path="res://Scripts/Wrapping.gd" id="4_o6h4k"]
+[ext_resource type="Texture2D" uid="uid://npwg8cmtgmvs" path="res://Assets/Presents/soccer ball icon.svg" id="4_p7phc"]
+[ext_resource type="Texture2D" uid="uid://cqhcqcyrhp68t" path="res://Assets/Presents/jester hat icon.svg" id="5_lylvl"]
+[ext_resource type="Texture2D" uid="uid://cie3sece7gipd" path="res://Assets/Presents/toy instruments icon.svg" id="6_taynm"]
+[ext_resource type="Texture2D" uid="uid://dhkcy1dy4loim" path="res://Assets/Wrappings/green wrapping icon.svg" id="9_5o1kb"]
+[ext_resource type="Texture2D" uid="uid://dqrewrgnw7ns3" path="res://Assets/Wrappings/gold wrapping icon.svg" id="10_nsc62"]
+[ext_resource type="Texture2D" uid="uid://kj6qjphhl5s0" path="res://Assets/Wrappings/red wrapping icon.svg" id="11_perr5"]
+[ext_resource type="Texture2D" uid="uid://ceui40mn6cjsw" path="res://Assets/Wrappings/blue wrapping icon.svg" id="12_tgsaw"]
+
+[sub_resource type="Resource" id="Resource_n8uns"]
+script = ExtResource("1_h2slq")
+display_name = "Mable"
+metadata/_custom_type_script = "uid://cspd5r0e6my3i"
+
+[sub_resource type="Resource" id="Resource_5arry"]
+script = ExtResource("1_h2slq")
+display_name = "Travis"
+metadata/_custom_type_script = "uid://cspd5r0e6my3i"
+
+[sub_resource type="Resource" id="Resource_mi0uk"]
+script = ExtResource("1_h2slq")
+display_name = "Ashley"
+metadata/_custom_type_script = "uid://cspd5r0e6my3i"
+
+[sub_resource type="Resource" id="Resource_qjbky"]
+script = ExtResource("1_h2slq")
+display_name = "Oli"
+metadata/_custom_type_script = "uid://cspd5r0e6my3i"
+
+[sub_resource type="Resource" id="Resource_fq27k"]
+script = ExtResource("2_dcpk8")
+icon = ExtResource("3_ejsbx")
+metadata/_custom_type_script = "uid://cc7mug34k4mtt"
+
+[sub_resource type="Resource" id="Resource_yybv0"]
+script = ExtResource("2_dcpk8")
+icon = ExtResource("4_p7phc")
+metadata/_custom_type_script = "uid://cc7mug34k4mtt"
+
+[sub_resource type="Resource" id="Resource_r7niw"]
+script = ExtResource("2_dcpk8")
+icon = ExtResource("5_lylvl")
+metadata/_custom_type_script = "uid://cc7mug34k4mtt"
+
+[sub_resource type="Resource" id="Resource_5e2ic"]
+script = ExtResource("2_dcpk8")
+icon = ExtResource("6_taynm")
+metadata/_custom_type_script = "uid://cc7mug34k4mtt"
+
+[sub_resource type="Resource" id="Resource_lfmtw"]
+script = ExtResource("4_o6h4k")
+icon = ExtResource("9_5o1kb")
+metadata/_custom_type_script = "uid://8m55mkd317ka"
+
+[sub_resource type="Resource" id="Resource_2emu1"]
+script = ExtResource("4_o6h4k")
+icon = ExtResource("10_nsc62")
+metadata/_custom_type_script = "uid://8m55mkd317ka"
+
+[sub_resource type="Resource" id="Resource_dj8ra"]
+script = ExtResource("4_o6h4k")
+icon = ExtResource("11_perr5")
+metadata/_custom_type_script = "uid://8m55mkd317ka"
+
+[sub_resource type="Resource" id="Resource_s0g5m"]
+script = ExtResource("4_o6h4k")
+icon = ExtResource("12_tgsaw")
+metadata/_custom_type_script = "uid://8m55mkd317ka"
+
+[resource]
+script = ExtResource("3_n8gn2")
+presents = Array[ExtResource("2_dcpk8")]([SubResource("Resource_fq27k"), SubResource("Resource_yybv0"), SubResource("Resource_r7niw"), SubResource("Resource_5e2ic")])
+wrappings = Array[ExtResource("4_o6h4k")]([SubResource("Resource_lfmtw"), SubResource("Resource_2emu1"), SubResource("Resource_dj8ra"), SubResource("Resource_s0g5m")])
+children = Array[ExtResource("1_h2slq")]([SubResource("Resource_n8uns"), SubResource("Resource_5arry"), SubResource("Resource_mi0uk"), SubResource("Resource_qjbky")])
+hints = Array[String](["Mable has started playing soccer... or was it Travis?", "Oli likes music", "Mable no longer likes the colour blue", "Ashley's favourite colour is red", "Travis does not like to read", "Ashley likes to dress up in funny costumes", "Travis wants his present wrapped in a gold wrapper"])
+dialog = Array[String](["djsdghfbsdujf"])
+num_children = 4
+metadata/_custom_type_script = "uid://bsul2uc068mgc"

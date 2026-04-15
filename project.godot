@@ -13,7 +13,7 @@ config_version=5
 config/name="ENG287 Project"
 run/main_scene="uid://duwkrgpfvg65s"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://Assets/Presents/icon.svg"
+config/icon="uid://nwtuwum2lxwx"
 
 [autoload]
 
@@ -37,3 +37,5 @@ click={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_s3tc_bptc=true
+textures/vram_compression/import_etc2_astc=true

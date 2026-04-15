@@ -5,8 +5,8 @@ var current_level_index := 0
 
 func _ready() -> void:
 	levels = [
-		#load("res://Data/Levels/Level1.tres"),
-		#load("res://Data/Levels/Level2.tres"),
+		load("res://Data/Levels/Level1.tres"),
+		load("res://Data/Levels/Level2.tres"),
 		load("res://Data/Levels/Level3.tres"),
 	]
 

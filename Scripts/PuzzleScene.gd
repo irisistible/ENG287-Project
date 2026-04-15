@@ -37,7 +37,7 @@ func _spawn_children() -> void:
 		
 	# Add text to indicate present slots
 	var label_p = Label.new()
-	label_p.text = '<- Put the correct presents here'
+	label_p.text = '<- Assign the correct present to each child'
 	label_p.position = Vector2(puzzle.n * 150 + 50, 100)
 	label_p.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	label_p.custom_minimum_size.x = 150 # Acts as a fixed width
@@ -45,7 +45,7 @@ func _spawn_children() -> void:
 	
 	# Add text to indicate wrapping slots
 	var label_w = Label.new()
-	label_w.text = '<- Put the correct present boxes here'
+	label_w.text = '<- Assign the correct present box to each child'
 	label_w.position = Vector2(puzzle.n * 150 + 50, 250)
 	label_w.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	label_w.custom_minimum_size.x = 150 # Acts as a fixed width

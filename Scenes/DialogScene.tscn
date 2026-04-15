@@ -47,7 +47,7 @@ layout_mode = 2
 
 [node name="Name" type="Label" parent="TextBox/MarginContainer/VBoxContainer" unique_id=375655127]
 layout_mode = 2
-text = "Grandmother"
+text = "Grandma"
 
 [node name="DialogText" type="Label" parent="TextBox/MarginContainer/VBoxContainer" unique_id=766058816]
 layout_mode = 2

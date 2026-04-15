@@ -79,6 +79,6 @@ presents = Array[ExtResource("2_dcpk8")]([SubResource("Resource_fq27k"), SubReso
 wrappings = Array[ExtResource("4_o6h4k")]([SubResource("Resource_lfmtw"), SubResource("Resource_2emu1"), SubResource("Resource_dj8ra"), SubResource("Resource_s0g5m")])
 children = Array[ExtResource("1_h2slq")]([SubResource("Resource_n8uns"), SubResource("Resource_5arry"), SubResource("Resource_mi0uk"), SubResource("Resource_qjbky")])
 hints = Array[String](["Travis does not like to read", "Mable no longer likes the colour blue", "Oli likes music", "Mable has started playing soccer... or was it Travis?", "Ashley likes to dress up in funny costumes", "Travis wants his present in a gold present box", "Ashley's favourite colour is red"])
-dialog = Array[String](["djsdghfbsdujf"])
+dialog = Array[String](["*Five years later*", "Little Oli is a toddler now, so Christmas will be extra exciting this year.", "Oh, right! I almost forgot the most important thing!", "I haven't prepared the presents yet!", "Hmm... I have all the presents with me here...", "But I'm really struggling to remember who each present is for.", "Preparing presents for four grandchildren seems to be harder than preparing presents for three.", "My brain is mixing up some of my information—my memory really has become more muddled recently."])
 num_children = 4
 metadata/_custom_type_script = "uid://bsul2uc068mgc"

@@ -63,6 +63,6 @@ presents = Array[ExtResource("2_we72x")]([SubResource("Resource_2jv1s"), SubReso
 wrappings = Array[ExtResource("4_6ycta")]([SubResource("Resource_li17d"), SubResource("Resource_6cfbk"), SubResource("Resource_cjjcu")])
 children = Array[ExtResource("1_m0xj1")]([SubResource("Resource_nlyrl"), SubResource("Resource_ofdu3"), SubResource("Resource_my4xu")])
 hints = Array[String](["Ashley wants the colour of her present box to match the colour of her present", "Mable's favourite colour is blue", "Ashley likes to play with toy cars", "Travis is scared of bears"])
-dialog = Array[String](["Hello", "frghaotgotuihgtjfnheruif r rtg tyhguit  t gtgtgtgdrtggrt"])
+dialog = Array[String](["Christmas is coming soon, and I still need to prepare presents for my three grandchildren.", "I have already bought all the presents, so now I just need to remember which present is for who."])
 num_children = 3
 metadata/_custom_type_script = "uid://bsul2uc068mgc"

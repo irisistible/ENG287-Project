@@ -9,7 +9,7 @@ var is_solution: bool = false
 var occupant = null
 
 func _ready() -> void:
-	modulate = Color(Color.MEDIUM_PURPLE, 0.7)
+	modulate = Color(Color.SLATE_GRAY, 0.7)
 
 func init(p_index: int, p_category: int, p_is_solution: bool, p_position: Vector2) -> void:
 	index = p_index

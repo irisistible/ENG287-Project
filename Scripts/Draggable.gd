@@ -77,8 +77,8 @@ func _on_area_2d_mouse_exited():
 		
 func _on_area_2d_body_entered(body:StaticBody2D):
 	if body.is_in_group("slot") and category == body.category:
-		body.modulate = Color(Color.REBECCA_PURPLE, 1)
+		body.modulate = Color(Color.LIGHT_SLATE_GRAY, 1)
 		
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("slot") and category == body.category:
-		body.modulate = Color(Color.MEDIUM_PURPLE, 0.7)
+		body.modulate = Color(Color.SLATE_GRAY, 0.7)

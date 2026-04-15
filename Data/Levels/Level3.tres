@@ -1,0 +1,84 @@
+[gd_resource type="Resource" script_class="PuzzleData" format=3 uid="uid://b3x0rylenxs1r"]
+
+[ext_resource type="Script" uid="uid://cspd5r0e6my3i" path="res://Scripts/Child.gd" id="1_b4tps"]
+[ext_resource type="Script" uid="uid://cc7mug34k4mtt" path="res://Scripts/Present.gd" id="2_sn6if"]
+[ext_resource type="Texture2D" uid="uid://bnusyv4sbyfku" path="res://Assets/Presents/phone icon.svg" id="3_8uti0"]
+[ext_resource type="Script" uid="uid://bsul2uc068mgc" path="res://Scripts/PuzzleData.gd" id="3_gay7b"]
+[ext_resource type="Texture2D" uid="uid://bv4yl5vxwj7es" path="res://Assets/Presents/game console icon.svg" id="4_khskn"]
+[ext_resource type="Script" uid="uid://8m55mkd317ka" path="res://Scripts/Wrapping.gd" id="4_pl6gh"]
+[ext_resource type="Texture2D" uid="uid://dndvri81y5uwu" path="res://Assets/Presents/headphones icon.svg" id="5_qxrmt"]
+[ext_resource type="Texture2D" uid="uid://flchbmijnkr3" path="res://Assets/Presents/guitar icon.svg" id="6_8y70v"]
+[ext_resource type="Texture2D" uid="uid://dqrewrgnw7ns3" path="res://Assets/Wrappings/gold wrapping icon.svg" id="9_hynxf"]
+[ext_resource type="Texture2D" uid="uid://kj6qjphhl5s0" path="res://Assets/Wrappings/red wrapping icon.svg" id="10_it3cn"]
+[ext_resource type="Texture2D" uid="uid://ceui40mn6cjsw" path="res://Assets/Wrappings/blue wrapping icon.svg" id="11_ma5g4"]
+[ext_resource type="Texture2D" uid="uid://dhkcy1dy4loim" path="res://Assets/Wrappings/green wrapping icon.svg" id="12_5rl77"]
+
+[sub_resource type="Resource" id="Resource_iq4y5"]
+script = ExtResource("1_b4tps")
+display_name = "Mable"
+metadata/_custom_type_script = "uid://cspd5r0e6my3i"
+
+[sub_resource type="Resource" id="Resource_xnuyl"]
+script = ExtResource("1_b4tps")
+display_name = "Travis"
+metadata/_custom_type_script = "uid://cspd5r0e6my3i"
+
+[sub_resource type="Resource" id="Resource_noih4"]
+script = ExtResource("1_b4tps")
+display_name = "Ashley"
+metadata/_custom_type_script = "uid://cspd5r0e6my3i"
+
+[sub_resource type="Resource" id="Resource_qfiul"]
+script = ExtResource("1_b4tps")
+display_name = "Oli"
+metadata/_custom_type_script = "uid://cspd5r0e6my3i"
+
+[sub_resource type="Resource" id="Resource_tajeg"]
+script = ExtResource("2_sn6if")
+icon = ExtResource("3_8uti0")
+metadata/_custom_type_script = "uid://cc7mug34k4mtt"
+
+[sub_resource type="Resource" id="Resource_6trht"]
+script = ExtResource("2_sn6if")
+icon = ExtResource("4_khskn")
+metadata/_custom_type_script = "uid://cc7mug34k4mtt"
+
+[sub_resource type="Resource" id="Resource_swnqu"]
+script = ExtResource("2_sn6if")
+icon = ExtResource("6_8y70v")
+metadata/_custom_type_script = "uid://cc7mug34k4mtt"
+
+[sub_resource type="Resource" id="Resource_ne04h"]
+script = ExtResource("2_sn6if")
+icon = ExtResource("5_qxrmt")
+metadata/_custom_type_script = "uid://cc7mug34k4mtt"
+
+[sub_resource type="Resource" id="Resource_fhf25"]
+script = ExtResource("4_pl6gh")
+icon = ExtResource("9_hynxf")
+metadata/_custom_type_script = "uid://8m55mkd317ka"
+
+[sub_resource type="Resource" id="Resource_q40rd"]
+script = ExtResource("4_pl6gh")
+icon = ExtResource("10_it3cn")
+metadata/_custom_type_script = "uid://8m55mkd317ka"
+
+[sub_resource type="Resource" id="Resource_sc0kv"]
+script = ExtResource("4_pl6gh")
+icon = ExtResource("12_5rl77")
+metadata/_custom_type_script = "uid://8m55mkd317ka"
+
+[sub_resource type="Resource" id="Resource_4t5gk"]
+script = ExtResource("4_pl6gh")
+icon = ExtResource("11_ma5g4")
+metadata/_custom_type_script = "uid://8m55mkd317ka"
+
+[resource]
+script = ExtResource("3_gay7b")
+presents = Array[ExtResource("2_sn6if")]([SubResource("Resource_tajeg"), SubResource("Resource_6trht"), SubResource("Resource_swnqu"), SubResource("Resource_ne04h")])
+wrappings = Array[ExtResource("4_pl6gh")]([SubResource("Resource_fhf25"), SubResource("Resource_q40rd"), SubResource("Resource_sc0kv"), SubResource("Resource_4t5gk")])
+children = Array[ExtResource("1_b4tps")]([SubResource("Resource_iq4y5"), SubResource("Resource_xnuyl"), SubResource("Resource_noih4"), SubResource("Resource_qfiul")])
+hints = Array[String](["Either Travis or Ashley wants a red present box, I can't seem to remember", "Travis likes to play video games, but I'm not sure if he prefers mobile games or console games", "My daugther in law said one of the children wants a phone in a gold present box, but I don't remember which child it was", "Ashley wants either a phone or a guitar", "I'm pretty sure Oli still likes to play music, or does he prefer to listen to music instead?", "I know that the gaming console should be in a red present box", "Neither Mable nor Oli like the colour green"])
+dialog = Array[String](["feuysgfesu"])
+num_children = 4
+metadata/_custom_type_script = "uid://bsul2uc068mgc"

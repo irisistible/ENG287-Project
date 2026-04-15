@@ -34,6 +34,22 @@ func _spawn_children() -> void:
 		slot_w.init(i, 1, true, Vector2(i * 150 + 100, 250))
 		slot_w.occupant_changed.connect(_on_slot_changed)
 		add_child(slot_w)
+		
+	# Add text to indicate present slots
+	var label_p = Label.new()
+	label_p.text = '<- Put the correct presents here'
+	label_p.position = Vector2(puzzle.n * 150 + 50, 100)
+	label_p.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label_p.custom_minimum_size.x = 150 # Acts as a fixed width
+	add_child(label_p)
+	
+	# Add text to indicate wrapping slots
+	var label_w = Label.new()
+	label_w.text = '<- Put the correct present boxes here'
+	label_w.position = Vector2(puzzle.n * 150 + 50, 250)
+	label_w.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label_w.custom_minimum_size.x = 150 # Acts as a fixed width
+	add_child(label_w)
 
 func _spawn_presents() -> void:
 	var permutation = _generate_permutation(puzzle.n)

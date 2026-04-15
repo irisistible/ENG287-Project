@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byk0mp858fox4"]
 
 [ext_resource type="Script" uid="uid://nu5p6xvkwa2h" path="res://Scripts/Dialog.gd" id="1_uqy8y"]
-[ext_resource type="Texture2D" uid="uid://ct08gkkypcyjg" path="res://Assets/Presents/icon.svg" id="2_i1aej"]
+[ext_resource type="Texture2D" uid="uid://nwtuwum2lxwx" path="res://Assets/misc/grandma icon.svg" id="2_i1aej"]
 
 [node name="DialogScene" type="Control" unique_id=1605421238]
 layout_mode = 3
@@ -17,9 +17,12 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -128.0
-offset_right = 128.0
+offset_left = 622.0
+offset_top = -542.0
+offset_right = 1388.0
+offset_bottom = 547.0
 grow_vertical = 0
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_i1aej")
 
 [node name="TextBox" type="PanelContainer" parent="." unique_id=1363326767]
